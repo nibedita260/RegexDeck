@@ -31,6 +31,12 @@ namespace RegularExpression
                         string email = Console.ReadLine();
                         regularExpression2.EmailCheck(email);
                         break;
+                    case 4:
+                        RegularExpression regularExpression3 = new RegularExpression();
+                        Console.WriteLine("enter phno");
+                        string phno = Console.ReadLine();
+                        regularExpression3.PHNoCheck(phno);
+                        break;
                     default:
                         Console.WriteLine("choose valid oprions");
                         break;

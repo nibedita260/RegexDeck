@@ -12,6 +12,7 @@ namespace RegularExpression
         const string EMAIL_PATTEREN = "^[0-9a-zA-Z]+[.-_--]{0,2}[0-9a-zA-Z]+[@][a-zA-Z]+[.][a-zA-Z]{2,3}([.][a-zA-Z]{2,3}){0,1}$";
         const string PHONE_NUMBER_PATTEREN = "^[+][0-9]{2}[ ][6-9]{1}[0-9]{9}$";
         const string PASSWORD_PATTEREN = "^[A-Za-z]{8,20}$";
+        const string PASSWORD_PATTEREN1 = "^[A-Z]{1}[a-z]{7,20}$";
         public void FirstnameCheck(string firstName)
         {
             if (Regex.IsMatch(firstName, FIRSTNAME_PATTERN)){
@@ -58,6 +59,17 @@ namespace RegularExpression
         public void PasswordCheck(string password)
         {
             if (Regex.IsMatch(password, PASSWORD_PATTEREN))
+            {
+                Console.WriteLine("password is Validated");
+            }
+            else
+            {
+                Console.WriteLine("password is not Validated");
+            }
+        }
+        public void PasswordCheck1(string password)
+        {
+            if (Regex.IsMatch(password, PASSWORD_PATTEREN1))
             {
                 Console.WriteLine("password is Validated");
             }

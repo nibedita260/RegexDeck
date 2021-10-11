@@ -10,7 +10,7 @@ namespace RegularExpression
             int options;
             while (!isExit)
             {
-                Console.WriteLine("Choose 1.FirstNameValidate 2. LastNameValidate 3. EmailValidate 4.PhnoValidate 5.PasswordValidate 6.PasswordRule2Validate");
+                Console.WriteLine("Choose 1.FirstNameValidate 2. LastNameValidate 3. EmailValidate 4.PhnoValidate 5.PasswordValidate 6.PasswordRule2Validate 7.PasswordRule3Validate");
                 options = Convert.ToInt32(Console.ReadLine());
                 switch (options)
                 {
@@ -49,8 +49,14 @@ namespace RegularExpression
                         string password1 = Console.ReadLine();
                         regularExpression5.PasswordCheck1(password1);
                         break;
+                    case 7:
+                        RegularExpression regularExpression6 = new RegularExpression();
+                        Console.WriteLine("enter password");
+                        string password2 = Console.ReadLine();
+                        regularExpression6.PasswordCheck2(password2);
+                        break;
                     default:
-                        Console.WriteLine("choose valid oprions");
+                        Console.WriteLine("choose valid options");
                         break;
                 }
 

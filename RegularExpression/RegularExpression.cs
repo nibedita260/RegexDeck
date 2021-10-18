@@ -102,5 +102,16 @@ namespace RegularExpression
                 Console.WriteLine("password is not Validated");
             }
         }
+        public void SampleEmailCheck(string email)
+        {
+            if (Regex.IsMatch(email, EMAIL_PATTEREN))
+            {
+                Console.WriteLine("email is Validated");
+            }
+            else
+            {
+                Console.WriteLine("email is not Validated");
+            }
+        }
     }
 }

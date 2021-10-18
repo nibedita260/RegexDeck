@@ -10,7 +10,7 @@ namespace RegularExpression
             int options;
             while (!isExit)
             {
-                Console.WriteLine("Choose 1.FirstNameValidate 2. LastNameValidate 3. EmailValidate 4.PhnoValidate 5.PasswordValidate 6.PasswordRule2Validate 7.PasswordRule3Validate 8.PasswordRule4Validate");
+                Console.WriteLine("Choose 1.FirstNameValidate 2. LastNameValidate 3. EmailValidate 4.PhnoValidate 5.PasswordValidate 6.PasswordRule2Validate 7.PasswordRule3Validate 8.PasswordRule4Validate 9.SampleEmailValidation");
                 options = Convert.ToInt32(Console.ReadLine());
                 switch (options)
                 {
@@ -60,6 +60,18 @@ namespace RegularExpression
                         Console.WriteLine("enter password");
                         string password3 = Console.ReadLine();
                         regularExpression7.PasswordCheck3(password3);
+                        break;
+                    case 9:
+                        RegularExpression regularExpression8 = new RegularExpression();
+                        regularExpression8.SampleEmailCheck("abc@yahoo.com");
+                        regularExpression8.SampleEmailCheck("abc-100@yahoo.com");
+                        regularExpression8.SampleEmailCheck("abc.100@yahoo.com");
+                        regularExpression8.SampleEmailCheck("abc111@abc.com");
+                        regularExpression8.SampleEmailCheck("abc-100@abc.net");
+                        regularExpression8.SampleEmailCheck("abc.100@abc.com.au");
+                        regularExpression8.SampleEmailCheck("abc@1.com");
+                        regularExpression8.SampleEmailCheck("abc@gmail.com.com");
+                        regularExpression8.SampleEmailCheck("abc+100@gmail.com");
                         break;
                     default:
                         Console.WriteLine("choose valid options");

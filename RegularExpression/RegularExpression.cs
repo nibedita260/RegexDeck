@@ -17,100 +17,181 @@ namespace RegularExpression
         const string PASSWORD_PATTEREN3 = "^(?=.*[A-Z]).{8,}$";
         public void FirstnameCheck(string firstName)
         {
-            if (Regex.IsMatch(firstName, FIRSTNAME_PATTERN)){
-                Console.WriteLine("First Name Validated");
-            }
-            else
+            try
             {
-                Console.WriteLine("First Name is not Validated");
+                if (string.IsNullOrEmpty(firstName))
+                    throw new RegularExpressionCustomException(RegularExpressionCustomException.InvalidUserdetails.EMPTY_NAME, "FirstName Could not be Empty");
+                if (Regex.IsMatch(firstName, FIRSTNAME_PATTERN))
+                    Console.WriteLine("First Name Validated");
+                else
+                    throw new RegularExpressionCustomException(RegularExpressionCustomException.InvalidUserdetails.INVALID_NAME, "First name starts with Cap and has minimum 3 characters");
+            }
+            catch(RegularExpressionCustomException e)
+            {
+                Console.WriteLine(e.Message);
+            }catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
             }
         }
         public void LastNameCheck(string lastName)
         {
-            if (Regex.IsMatch(lastName, LASTNAME_PATTERN))
+            try
             {
-                Console.WriteLine("Last Name Validated");
+                if (string.IsNullOrEmpty(lastName))
+                    throw new RegularExpressionCustomException(RegularExpressionCustomException.InvalidUserdetails.EMPTY_NAME, "LastName Could not be Empty");
+                if (Regex.IsMatch(lastName, LASTNAME_PATTERN))
+                    Console.WriteLine("Last Name Validated");
+                else
+                    throw new RegularExpressionCustomException(RegularExpressionCustomException.InvalidUserdetails.INVALID_NAME, "Last name starts with Cap and has minimum 3 characters ");
             }
-            else
+            catch(RegularExpressionCustomException e)
             {
-                Console.WriteLine("Last Name is not Validated");
+                Console.WriteLine(e.Message);
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
             }
         }
         public void EmailCheck(string email)
         {
-            if (Regex.IsMatch(email, EMAIL_PATTEREN))
+            try
             {
-                Console.WriteLine("email is Validated");
+                if (string.IsNullOrEmpty(email))
+                    throw new RegularExpressionCustomException(RegularExpressionCustomException.InvalidUserdetails.EMPTY_EMAIL, "Email Could not be Empty");
+                if (Regex.IsMatch(email, EMAIL_PATTEREN))
+                    Console.WriteLine("email is Validated");
+                else
+                    throw new RegularExpressionCustomException(RegularExpressionCustomException.InvalidUserdetails.INVALID_EMAIL, " E.g. abc.xyz@bl.co.in - Email has 3 mandatory parts (abc, bl & co) and 2 optional(xyz & in) with precise @ and.positions");
             }
-            else
+            catch(RegularExpressionCustomException e)
             {
-                Console.WriteLine("email is not Validated");
+                Console.WriteLine(e.Message);
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
             }
         }
         public void PHNoCheck(string phno)
         {
-            if (Regex.IsMatch(phno, PHONE_NUMBER_PATTEREN))
+            try
             {
-                Console.WriteLine("phno is Validated");
+                if (string.IsNullOrEmpty(phno))
+                    throw new RegularExpressionCustomException(RegularExpressionCustomException.InvalidUserdetails.EMPTY_PHONE_NO, "Phone Number Could not be Empty");
+                if (Regex.IsMatch(phno, PHONE_NUMBER_PATTEREN))
+                    Console.WriteLine("phno is Validated");
+                else
+                    throw new RegularExpressionCustomException(RegularExpressionCustomException.InvalidUserdetails.INVALID_PHONE_NO, "Phone Number Should Have 10 digits and First digits Must starts from [6..9] and [+91 ] is for optional Mobile Format - E.g. 91 6919819801 - Country code follow by space and 10 digit number");
             }
-            else
+            catch(RegularExpressionCustomException e)
             {
-                Console.WriteLine("phno is not Validated");
+                Console.WriteLine(e.Message);
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
             }
         }
         public void PasswordCheck(string password)
         {
-            if (Regex.IsMatch(password, PASSWORD_PATTEREN))
+            try
             {
-                Console.WriteLine("password is Validated");
+                if (string.IsNullOrEmpty(password))
+                    throw new RegularExpressionCustomException(RegularExpressionCustomException.InvalidUserdetails.EMPTY_PASSWORD, "Password Could not be Empty");
+                if (Regex.IsMatch(password, PASSWORD_PATTEREN))
+                    Console.WriteLine("password is Validated");
+                else
+                    throw new RegularExpressionCustomException(RegularExpressionCustomException.InvalidUserdetails.INVALID_PASSWORD, "Password Have minimum 8 Characters");
             }
-            else
+            catch(RegularExpressionCustomException e)
             {
-                Console.WriteLine("password is not Validated");
+                Console.WriteLine(e.Message);
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
             }
         }
         public void PasswordCheck1(string password)
         {
-            if (Regex.IsMatch(password, PASSWORD_PATTEREN1))
+            try
             {
-                Console.WriteLine("password is Validated");
+                if (string.IsNullOrEmpty(password))
+                    throw new RegularExpressionCustomException(RegularExpressionCustomException.InvalidUserdetails.EMPTY_PASSWORD, "Password Could not be Empty");
+                if (Regex.IsMatch(password, PASSWORD_PATTEREN1))
+                    Console.WriteLine("password is Validated");
+                else
+                    throw new RegularExpressionCustomException(RegularExpressionCustomException.InvalidUserdetails.INVALID_PASSWORD, "Password Have minimum 8 Characters, Should have at least 1 Upper Case");
             }
-            else
+            catch (RegularExpressionCustomException e)
             {
-                Console.WriteLine("password is not Validated");
+                Console.WriteLine(e.Message);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
             }
         }
         public void PasswordCheck2(string password)
         {
-            if (Regex.IsMatch(password, PASSWORD_PATTEREN2))
+            try
             {
-                Console.WriteLine("password is Validated");
+                if (string.IsNullOrEmpty(password))
+                    throw new RegularExpressionCustomException(RegularExpressionCustomException.InvalidUserdetails.EMPTY_PASSWORD, "Password Could not be Empty");
+                if (Regex.IsMatch(password, PASSWORD_PATTEREN2))
+                    Console.WriteLine("password is Validated");
+                else
+                    throw new RegularExpressionCustomException(RegularExpressionCustomException.InvalidUserdetails.INVALID_PASSWORD, "Password Have minimum 8 Characters, Should have at least 1 Upper Case and Should have at least 1 numeric number ");
             }
-            else
+            catch (RegularExpressionCustomException e)
             {
-                Console.WriteLine("password is not Validated");
+                Console.WriteLine(e.Message);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
             }
         }
         public void PasswordCheck3(string password)
         {
-            if (Regex.IsMatch(password, PASSWORD_PATTEREN3))
+            try
             {
-                Console.WriteLine("password is Validated");
+                if (string.IsNullOrEmpty(password))
+                    throw new RegularExpressionCustomException(RegularExpressionCustomException.InvalidUserdetails.EMPTY_PASSWORD, "Password Could not be Empty");
+                if (Regex.IsMatch(password, PASSWORD_PATTEREN3))
+                    Console.WriteLine("password is Validated");
+                else
+                    throw new RegularExpressionCustomException(RegularExpressionCustomException.InvalidUserdetails.INVALID_PASSWORD, "Password Have minimum 8 Characters, Should have at least 1 Upper Case and Should have at least 1 numeric number and Has exactly 1 Special Character");
             }
-            else
+            catch (RegularExpressionCustomException e)
             {
-                Console.WriteLine("password is not Validated");
+                Console.WriteLine(e.Message);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
             }
         }
         public void SampleEmailCheck(string email)
         {
-            if (Regex.IsMatch(email, EMAIL_PATTEREN))
+            try
             {
-                Console.WriteLine("email is Validated");
+                if (string.IsNullOrEmpty(email))
+                    throw new RegularExpressionCustomException(RegularExpressionCustomException.InvalidUserdetails.EMPTY_EMAIL, "Email Could not be Empty");
+                if (Regex.IsMatch(email, EMAIL_PATTEREN))
+                    Console.WriteLine("email is Validated");
+                else
+                    throw new RegularExpressionCustomException(RegularExpressionCustomException.InvalidUserdetails.INVALID_EMAIL, " E.g. abc.xyz@bl.co.in - Email has 3 mandatory parts (abc, bl & co) and 2 optional(xyz & in) with precise @ and.positions");
             }
-            else
+            catch (RegularExpressionCustomException e)
             {
-                Console.WriteLine("email is not Validated");
+                Console.WriteLine(e.Message);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
             }
         }
         public string LambdaExpressionFirstnameCheck(string firstName) => Regex.IsMatch(firstName, FIRSTNAME_PATTERN) ? "firstName is Validated" : "firstName is not Validated";

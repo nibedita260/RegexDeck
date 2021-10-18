@@ -14,55 +14,59 @@ namespace RegularExpression
                 options = Convert.ToInt32(Console.ReadLine());
                 switch (options)
                 {
-                    case 1:RegularExpression regularExpression = new RegularExpression();
+                    case 1:RegularExpressionValidation regularExpression = new RegularExpressionValidation();
                         Console.WriteLine("enter firstname");
                         string firstName = Console.ReadLine();
-                        regularExpression.FirstnameCheck(firstName);
+                        string result=regularExpression.FirstnameCheck(firstName);
+                        Console.WriteLine(result);
                         break;
                     case 2:
-                        RegularExpression regularExpression1 = new RegularExpression();
+                        RegularExpressionValidation regularExpression1 = new RegularExpressionValidation();
                         Console.WriteLine("enter lastname");
                         string lastName = Console.ReadLine();
                         regularExpression1.LastNameCheck(lastName);
                         break;
                     case 3:
-                        RegularExpression regularExpression2 = new RegularExpression();
+                        RegularExpressionValidation regularExpression2 = new RegularExpressionValidation();
                         Console.WriteLine("enter email");
                         string email = Console.ReadLine();
-                        regularExpression2.EmailCheck(email);
+                        string result1 = regularExpression2.EmailCheck(email);
+                        Console.WriteLine(result1);
                         break;
                     case 4:
-                        RegularExpression regularExpression3 = new RegularExpression();
+                        RegularExpressionValidation regularExpression3 = new RegularExpressionValidation();
                         Console.WriteLine("enter phno");
                         string phno = Console.ReadLine();
-                        regularExpression3.PHNoCheck(phno);
+                        string result2 =regularExpression3.PHNoCheck(phno);
+                        Console.WriteLine(result2);
                         break;
                     case 5:
-                        RegularExpression regularExpression4 = new RegularExpression();
+                        RegularExpressionValidation regularExpression4 = new RegularExpressionValidation();
                         Console.WriteLine("enter password");
                         string password = Console.ReadLine();
                         regularExpression4.PasswordCheck(password);
                         break;
                     case 6:
-                        RegularExpression regularExpression5 = new RegularExpression();
+                        RegularExpressionValidation regularExpression5 = new RegularExpressionValidation();
                         Console.WriteLine("enter password");
                         string password1 = Console.ReadLine();
                         regularExpression5.PasswordCheck1(password1);
                         break;
                     case 7:
-                        RegularExpression regularExpression6 = new RegularExpression();
+                        RegularExpressionValidation regularExpression6 = new RegularExpressionValidation();
                         Console.WriteLine("enter password");
                         string password2 = Console.ReadLine();
                         regularExpression6.PasswordCheck2(password2);
                         break;
                     case 8:
-                        RegularExpression regularExpression7 = new RegularExpression();
+                        RegularExpressionValidation regularExpression7 = new RegularExpressionValidation();
                         Console.WriteLine("enter password");
                         string password3 = Console.ReadLine();
-                        regularExpression7.PasswordCheck3(password3);
+                        string result3 =regularExpression7.PasswordCheck3(password3);
+                        Console.WriteLine(result3);
                         break;
                     case 9:
-                        RegularExpression regularExpression8 = new RegularExpression();
+                        RegularExpressionValidation regularExpression8 = new RegularExpressionValidation();
                         regularExpression8.SampleEmailCheck("abc@yahoo.com");
                         regularExpression8.SampleEmailCheck("abc-100@yahoo.com");
                         regularExpression8.SampleEmailCheck("abc.100@yahoo.com");
@@ -73,7 +77,7 @@ namespace RegularExpression
                         regularExpression8.SampleEmailCheck("abc@gmail.com.com");
                         regularExpression8.SampleEmailCheck("abc+100@gmail.com");
                         break;
-                    case 10:RegularExpression regularExpression9 = new RegularExpression();
+                    case 10:RegularExpressionValidation regularExpression9 = new RegularExpressionValidation();
                         Console.WriteLine("enter firstname");
                         string firstName1 = Console.ReadLine();
                         string output1=regularExpression9.LambdaExpressionFirstnameCheck(firstName1);

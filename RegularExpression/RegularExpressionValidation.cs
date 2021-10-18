@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 
 namespace RegularExpression
 {
-    class RegularExpression
+    public class RegularExpressionValidation
     {
         const string FIRSTNAME_PATTERN = "^[A-Z]{1}[a-z]{3,20}$";
         const string LASTNAME_PATTERN = "^[A-Z]{1}[a-z]{3,20}$";
@@ -15,14 +15,14 @@ namespace RegularExpression
         const string PASSWORD_PATTEREN1 = "^[A-Z]{1}[a-z]{7,20}$";
         const string PASSWORD_PATTEREN2 = "^(?=.*[A-Z])(?=.*[0-9]).{8,}$";
         const string PASSWORD_PATTEREN3 = "^(?=.*[A-Z]).{8,}$";
-        public void FirstnameCheck(string firstName)
+        public string FirstnameCheck(string firstName)
         {
             try
             {
                 if (string.IsNullOrEmpty(firstName))
                     throw new RegularExpressionCustomException(RegularExpressionCustomException.InvalidUserdetails.EMPTY_NAME, "FirstName Could not be Empty");
                 if (Regex.IsMatch(firstName, FIRSTNAME_PATTERN))
-                    Console.WriteLine("First Name Validated");
+                    return "First Name Validated";
                 else
                     throw new RegularExpressionCustomException(RegularExpressionCustomException.InvalidUserdetails.INVALID_NAME, "First name starts with Cap and has minimum 3 characters");
             }
@@ -33,6 +33,7 @@ namespace RegularExpression
             {
                 Console.WriteLine(e.Message);
             }
+            return null;
         }
         public void LastNameCheck(string lastName)
         {
@@ -54,16 +55,16 @@ namespace RegularExpression
                 Console.WriteLine(e.Message);
             }
         }
-        public void EmailCheck(string email)
+        public string EmailCheck(string email)
         {
             try
             {
                 if (string.IsNullOrEmpty(email))
                     throw new RegularExpressionCustomException(RegularExpressionCustomException.InvalidUserdetails.EMPTY_EMAIL, "Email Could not be Empty");
                 if (Regex.IsMatch(email, EMAIL_PATTEREN))
-                    Console.WriteLine("email is Validated");
+                    return "email is Validated";
                 else
-                    throw new RegularExpressionCustomException(RegularExpressionCustomException.InvalidUserdetails.INVALID_EMAIL, " E.g. abc.xyz@bl.co.in - Email has 3 mandatory parts (abc, bl & co) and 2 optional(xyz & in) with precise @ and.positions");
+                    throw new RegularExpressionCustomException(RegularExpressionCustomException.InvalidUserdetails.INVALID_EMAIL, "E.g. abc.xyz@bl.co.in - Email has 3 mandatory parts (abc, bl & co) and 2 optional(xyz & in) with precise @ and.positions");
             }
             catch(RegularExpressionCustomException e)
             {
@@ -73,15 +74,16 @@ namespace RegularExpression
             {
                 Console.WriteLine(e.Message);
             }
+            return null;
         }
-        public void PHNoCheck(string phno)
+        public string PHNoCheck(string phno)
         {
             try
             {
                 if (string.IsNullOrEmpty(phno))
                     throw new RegularExpressionCustomException(RegularExpressionCustomException.InvalidUserdetails.EMPTY_PHONE_NO, "Phone Number Could not be Empty");
                 if (Regex.IsMatch(phno, PHONE_NUMBER_PATTEREN))
-                    Console.WriteLine("phno is Validated");
+                   return "phno is Validated";
                 else
                     throw new RegularExpressionCustomException(RegularExpressionCustomException.InvalidUserdetails.INVALID_PHONE_NO, "Phone Number Should Have 10 digits and First digits Must starts from [6..9] and [+91 ] is for optional Mobile Format - E.g. 91 6919819801 - Country code follow by space and 10 digit number");
             }
@@ -93,6 +95,7 @@ namespace RegularExpression
             {
                 Console.WriteLine(e.Message);
             }
+            return null;
         }
         public void PasswordCheck(string password)
         {
@@ -154,14 +157,14 @@ namespace RegularExpression
                 Console.WriteLine(e.Message);
             }
         }
-        public void PasswordCheck3(string password)
+        public string PasswordCheck3(string password)
         {
             try
             {
                 if (string.IsNullOrEmpty(password))
                     throw new RegularExpressionCustomException(RegularExpressionCustomException.InvalidUserdetails.EMPTY_PASSWORD, "Password Could not be Empty");
                 if (Regex.IsMatch(password, PASSWORD_PATTEREN3))
-                    Console.WriteLine("password is Validated");
+                    return "password is Validated";
                 else
                     throw new RegularExpressionCustomException(RegularExpressionCustomException.InvalidUserdetails.INVALID_PASSWORD, "Password Have minimum 8 Characters, Should have at least 1 Upper Case and Should have at least 1 numeric number and Has exactly 1 Special Character");
             }
@@ -173,6 +176,7 @@ namespace RegularExpression
             {
                 Console.WriteLine(e.Message);
             }
+            return null;
         }
         public void SampleEmailCheck(string email)
         {
@@ -183,7 +187,7 @@ namespace RegularExpression
                 if (Regex.IsMatch(email, EMAIL_PATTEREN))
                     Console.WriteLine("email is Validated");
                 else
-                    throw new RegularExpressionCustomException(RegularExpressionCustomException.InvalidUserdetails.INVALID_EMAIL, " E.g. abc.xyz@bl.co.in - Email has 3 mandatory parts (abc, bl & co) and 2 optional(xyz & in) with precise @ and.positions");
+                    throw new RegularExpressionCustomException(RegularExpressionCustomException.InvalidUserdetails.INVALID_EMAIL, "E.g. abc.xyz@bl.co.in - Email has 3 mandatory parts (abc, bl & co) and 2 optional(xyz & in) with precise @ and.positions");
             }
             catch (RegularExpressionCustomException e)
             {

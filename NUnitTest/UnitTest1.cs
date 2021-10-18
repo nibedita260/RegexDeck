@@ -72,7 +72,7 @@ namespace NUnitTest
                 Assert.AreEqual("E.g. abc.xyz@bl.co.in - Email has 3 mandatory parts (abc, bl & co) and 2 optional(xyz & in) with precise @ and.positions", ex.Message);
             }
         }
-        //Test 8:- EmpltyOrNUll Firstname Exception
+        //Test 8:- EmpltyOrNUll Email Exception
         [Test]
         public void Given_NUllEmail_ThrowException()
         {
@@ -85,7 +85,7 @@ namespace NUnitTest
                 Assert.AreEqual("Email Could not be Empty", ex.Message);
             }
         }
-        //Test 9:- Invalid Email Exception
+        //Test 9:- Invalid PHNo Exception
         [Test]
         public void Given_InvalidPHNo_ThrowException()
         {
@@ -98,7 +98,7 @@ namespace NUnitTest
                 Assert.AreEqual("Phone Number Should Have 10 digits and First digits Must starts from [6..9] and [+91 ] is for optional Mobile Format - E.g. 91 6919819801 - Country code follow by space and 10 digit number", ex.Message);
             }
         }
-        //Test 10:- EmpltyOrNUll Firstname Exception
+        //Test 10:- EmpltyOrNUll PHNo Exception
         [Test]
         public void Given_NUllPHNo_ThrowException()
         {
@@ -124,7 +124,7 @@ namespace NUnitTest
                 Assert.AreEqual("Password Have minimum 8 Characters, Should have at least 1 Upper Case and Should have at least 1 numeric number and Has exactly 1 Special Character", ex.Message);
             }
         }
-        //Test 10:- EmpltyOrNUll Firstname Exception
+        //Test 12:- EmpltyOrNUll Password Exception
         [Test]
         public void Given_NUllPassword_ThrowException()
         {

@@ -10,7 +10,7 @@ namespace RegularExpression
         const string FIRSTNAME_PATTERN = "^[A-Z]{1}[a-z]{3,20}$";
         const string LASTNAME_PATTERN = "^[A-Z]{1}[a-z]{3,20}$";
         const string EMAIL_PATTEREN = "^[0-9a-zA-Z]+[.-_--]{0,2}[0-9a-zA-Z]+[@][a-zA-Z]+[.][a-zA-Z]{2,3}([.][a-zA-Z]{2,3}){0,1}$";
-        const string PHONE_NUMBER_PATTEREN = "^[+][0-9]{2}[ ][6-9]{1}[0-9]{9}$";
+        const string PHONE_NUMBER_PATTEREN = "^([+][0-9]{2}[ ]){0,1}[6-9]{1}[0-9]{9}$";
         const string PASSWORD_PATTEREN = "^[A-Za-z]{8,20}$";
         const string PASSWORD_PATTEREN1 = "^[A-Z]{1}[a-z]{7,20}$";
         const string PASSWORD_PATTEREN2 = "^(?=.*[A-Z])(?=.*[0-9]).{8,}$";
@@ -113,5 +113,10 @@ namespace RegularExpression
                 Console.WriteLine("email is not Validated");
             }
         }
+        public string LambdaExpressionFirstnameCheck(string firstName) => Regex.IsMatch(firstName, FIRSTNAME_PATTERN) ? "firstName is Validated" : "firstName is not Validated";
+        public string LambdaExpressionLastnameCheck(string lastName) => Regex.IsMatch(lastName, LASTNAME_PATTERN) ? "lastName is Validated" : "lastName is not Validated";
+        public string LambdaExpressionEmailCheck(string email) => Regex.IsMatch(email, EMAIL_PATTEREN) ? "email is Validated" : "email is not Validated";
+        public string LambdaExpressionPhoneNumberCheck(string phno) => Regex.IsMatch(phno, PHONE_NUMBER_PATTEREN) ? "phno is Validated" : "phno is not Validated";
+        public string LambdaExpressionpasswordCheck(string password) => Regex.IsMatch(password, PASSWORD_PATTEREN3) ? "password is Validated" : "password is not Validated";
     }
 }

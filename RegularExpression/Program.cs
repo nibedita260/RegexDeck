@@ -10,7 +10,7 @@ namespace RegularExpression
             int options;
             while (!isExit)
             {
-                Console.WriteLine("Choose 1.FirstNameValidate 2. LastNameValidate 3. EmailValidate 4.PhnoValidate 5.PasswordValidate 6.PasswordRule2Validate 7.PasswordRule3Validate 8.PasswordRule4Validate 9.SampleEmailValidation");
+                Console.WriteLine("Choose 1.FirstNameValidate 2. LastNameValidate 3. EmailValidate 4.PhnoValidate 5.PasswordValidate 6.PasswordRule2Validate 7.PasswordRule3Validate 8.PasswordRule4Validate 9.SampleEmailValidation 10.LambaExpressionToValidateUserFields");
                 options = Convert.ToInt32(Console.ReadLine());
                 switch (options)
                 {
@@ -73,11 +73,32 @@ namespace RegularExpression
                         regularExpression8.SampleEmailCheck("abc@gmail.com.com");
                         regularExpression8.SampleEmailCheck("abc+100@gmail.com");
                         break;
+                    case 10:RegularExpression regularExpression9 = new RegularExpression();
+                        Console.WriteLine("enter firstname");
+                        string firstName1 = Console.ReadLine();
+                        string output1=regularExpression9.LambdaExpressionFirstnameCheck(firstName1);
+                        Console.WriteLine(output1);
+                        Console.WriteLine("enter lastname");
+                        string lastName1 = Console.ReadLine();
+                        string output2 = regularExpression9.LambdaExpressionLastnameCheck(lastName1);
+                        Console.WriteLine(output2);
+                        Console.WriteLine("enter email");
+                        string email1 = Console.ReadLine();
+                        string output3 = regularExpression9.LambdaExpressionEmailCheck(email1);
+                        Console.WriteLine(output3);
+                        Console.WriteLine("enter phno");
+                        string phno1 = Console.ReadLine();
+                        string output4 = regularExpression9.LambdaExpressionPhoneNumberCheck(phno1);
+                        Console.WriteLine(output4);
+                        Console.WriteLine("enter password");
+                        string password4 = Console.ReadLine();
+                        string output5 = regularExpression9.LambdaExpressionpasswordCheck(password4);
+                        Console.WriteLine(output5);
+                        break;
                     default:
                         Console.WriteLine("choose valid options");
                         break;
                 }
-
             }
         }
     }
